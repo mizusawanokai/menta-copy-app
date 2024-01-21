@@ -44,3 +44,23 @@ docker-compose run --rm backend rails db:migrate
 ```
 docker-compose up
 ```
+
+6. コンテナ内に入る
+
+* backend
+
+```
+docker exec -it menta-copy-app-backend-1 /bin/bash
+```
+
+* frontend
+
+```
+docker exec -it menta-copy-app-frontend-1 /bin/bash
+```
+
+* db
+
+```
+docker exec -it menta-copy-app-db-1 /bin/bash
+```
