@@ -1,39 +1,45 @@
 # menta-copy-app
 
-1. Dockerイメージのビルド
+1. menta-copy-appへ移動
 
 ```
-docker-compose build
+cd menta-copy-app
 ```
 
-2. 依存関係のインストール
+2. Dockerイメージのビルド
+
+```
+docker-compose build --no-cache
+```
+
+3. 依存関係のインストール
 
 * Frontend（Next.js）の依存関係をインストールします。
 
 ```
-docker-compose run --rm front yarn install
+docker-compose run --rm frontend npm install
 ```
 
 * Backend（Rails API）の依存関係をインストールします。
 
 ```
-docker-compose run --rm api bundle install
+docker-compose run --rm backend bundle install
 ```
 
-3. データベースのセットアップ
+4. データベースのセットアップ
 
 * 初回のみ実行します。
 ```
-docker-compose run --rm api rails db:create
+docker-compose run --rm backend rails db:create
 ```
 
 * 必要に応じて、データベースのマイグレーションを実行します。
 
 ```
-docker-compose run --rm api rails db:migrate
+docker-compose run --rm backend rails db:migrate
 ```
 
-4. サービスの起動
+5. サービスの起動
 
 ```
 docker-compose up
