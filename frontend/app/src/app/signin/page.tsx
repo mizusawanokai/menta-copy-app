@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import type { AuthProvider } from "firebase/auth";
 import { auth } from "@/firebase/client";
 import { signIn as signInByNextAuth } from "next-auth/react";
 
@@ -31,6 +32,18 @@ const SignIn = () => {
     }
   };
 
+  const googleProvider = new GoogleAuthProvider();
+
+  const handleOAuthSignIn = (provider: AuthProvider) => {
+    signInWithPopup(auth, provider)
+      // 認証に成功したら ID トークンを NextAuth に渡す
+      .then((credential) => credential.user.getIdToken(true))
+      .then((idToken) => {
+        signInByNextAuth("credentials", { idToken });
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
       <div>
         <input
@@ -53,6 +66,8 @@ const SignIn = () => {
         >
           ログイン
         </button>
+        <br />
+        <button onClick={() => handleOAuthSignIn(googleProvider)}>Google</button>
       </div>
   );
 };
