@@ -1,8 +1,9 @@
 // Firebase client SDKの初期化
 import { initializeApp, getApps } from "firebase/app";
+import type { FirebaseOptions } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-const firebaseConfig = {
+const firebaseConfig: FirebaseOptions = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,
   databaseURL: process.env.NEXT_PUBLIC_DATABASE_URL,
