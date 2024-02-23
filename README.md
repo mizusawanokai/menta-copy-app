@@ -49,16 +49,6 @@ docker-compose up
 
 ## コマンド
 
-### frontendコンテナ
-```
-docker-compose exec frontend bash
-```
-
-### backendコンテナ
-```
-docker-compose exec backend bash
-```
-
 ### prettierの実行
 ```
 // frontendコンテナ内
@@ -69,4 +59,23 @@ yarn prettier --write src
 ```
 // frontendコンテナ内
 npx eslint . --fix
+```
+###  コンテナ内に入る
+
+* backend
+
+```
+docker exec -it menta-copy-app-backend-1 /bin/bash
+```
+
+* frontend
+
+```
+docker exec -it menta-copy-app-frontend-1 /bin/bash
+```
+
+* db
+
+```
+docker exec -it menta-copy-app-db-1 /bin/bash
 ```
