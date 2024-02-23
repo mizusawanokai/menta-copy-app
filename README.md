@@ -1,5 +1,7 @@
 # menta-copy-app
 
+## 環境構築手順
+
 1. menta-copy-appへ移動
 
 ```
@@ -43,4 +45,22 @@ docker-compose run --rm backend rails db:migrate
 
 ```
 docker-compose up
+```
+
+## コマンド
+
+### frontendコンテナ
+```
+docker-compose exec frontend bash
+```
+
+### backendコンテナ
+```
+docker-compose exec backend bash
+```
+
+### prettierの実行
+```
+// frontendコンテナ内
+yarn prettier --write src
 ```
