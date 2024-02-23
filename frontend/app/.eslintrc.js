@@ -7,7 +7,7 @@ module.exports = {
     es2021: true, // ES2021までに導入されたグローバル変数を認識させる
   },
   parserOptions: {
-    ecmaVersion: "latest", 
+    ecmaVersion: "latest",
     sourceType: "module", // モジュールモードではimport文やexport文といった追加の構文がサポートされる
     // 以下２つはTypeScript ESLint独自のオプション
     project: "./tsconfig.eslint.json", // ESLint実行時に使うコンパイラ設定ファイルをtsconfigRootDirからの相対パスで指定

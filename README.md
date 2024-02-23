@@ -64,3 +64,9 @@ docker-compose exec backend bash
 // frontendコンテナ内
 yarn prettier --write src
 ```
+
+### lintの実行
+```
+// frontendコンテナ内
+npx eslint . --fix
+```
