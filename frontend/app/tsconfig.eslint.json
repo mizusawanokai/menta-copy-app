@@ -1,0 +1,10 @@
+// TypeScript ESLintは、チェック時に型情報を利用するために、TypeScriptコンパイラを使う
+// その際のコンパイラ設定をtsconfig.eslint.jsonに記述する
+// コンパイラ設定は、tsconfig.jsonの内容を継承しつつ上書きが必要なところだけ追加
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "allowJs": true // .eslintrc.js自体もESLintのチェック対象に含めるため
+  },
+  "include": ["src", ".*.js", "*.js"]
+}
