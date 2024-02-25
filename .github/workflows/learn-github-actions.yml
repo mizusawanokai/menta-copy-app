@@ -9,9 +9,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - name: Change directory
-        run: cd ./frontend/app
       - name: Install Dependencies
+        run: cd ./frontend/app
         run: npm install
       - name: Run Prettier
         run: yarn prettier --write src
