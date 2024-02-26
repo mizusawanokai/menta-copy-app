@@ -6,5 +6,5 @@
   "compilerOptions": {
     "allowJs": true // .eslintrc.js自体もESLintのチェック対象に含めるため
   },
-  "include": ["src", ".*.js", "*.js"]
+  "include": ["src", ".*.js", "*.js", "*.ts"]
 }
