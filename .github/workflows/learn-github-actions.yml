@@ -9,10 +9,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - name: Install Dependencies
-        run: cd ./frontend/app
-        run: npm install
-      - name: Run Prettier
-        run: yarn prettier --write src
-      - name: Run ESLint
-        run: npx eslint . --fix
+      - name: Install Dependencies and Run Checks
+        run: |
+          cd ./frontend/app
+          npm install
+          yarn prettier --write src
+          npx eslint . --fix
