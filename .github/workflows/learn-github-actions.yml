@@ -13,5 +13,5 @@ jobs:
         run: |
           cd ./frontend/app
           npm install
-          yarn prettier --write src
-          npx eslint . --fix
+          yarn prettier --write
+          npx eslint .
